@@ -4,15 +4,23 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Iterprocess Communication | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="进程间通信IPC笔记整理 概念：   进程间通信是指不同进程之间传播或者交换信息。每个进程都有不同的用户地址空间，任何一个进程的全局变量在另一个进程中都看不到，因此进程间交换数据必须通过内核。 内核中开辟一块缓冲区，进程1把数据拷到内核缓冲区，进程2再从内核中把数据读走。   unix的进程通信方式：  管道Pipe： 半双工，单向流动，需要双方通信时，建立起两个管道 只能用于父子进程或者兄弟进程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Iterprocess Communication">
+<meta property="og:url" content="http://example.com/2021/08/02/Iterprocess-Communication/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="进程间通信IPC笔记整理 概念：   进程间通信是指不同进程之间传播或者交换信息。每个进程都有不同的用户地址空间，任何一个进程的全局变量在另一个进程中都看不到，因此进程间交换数据必须通过内核。 内核中开辟一块缓冲区，进程1把数据拷到内核缓冲区，进程2再从内核中把数据读走。   unix的进程通信方式：  管道Pipe： 半双工，单向流动，需要双方通信时，建立起两个管道 只能用于父子进程或者兄弟进程">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201022144414658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTg0MDY2,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201021162224453.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTg0MDY2,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020102117161131.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTg0MDY2,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-08-02T11:04:49.000Z">
+<meta property="article:modified_time" content="2021-08-02T13:40:21.782Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201022144414658.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3OTg0MDY2,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,9 +77,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Iterprocess-Communication" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Iterprocess-Communication" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/02/Iterprocess-Communication/" class="article-date">
   <time class="dt-published" datetime="2021-08-02T11:04:49.000Z" itemprop="datePublished">2021-08-02</time>
@@ -84,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/02/Iterprocess-Communication/">Iterprocess Communication</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Iterprocess Communication
     </h1>
   
 
@@ -281,356 +287,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hash简介" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/02/hash%E7%AE%80%E4%BB%8B/" class="article-date">
-  <time class="dt-published" datetime="2021-08-02T10:41:25.000Z" itemprop="datePublished">2021-08-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/02/hash%E7%AE%80%E4%BB%8B/">hash简介</a>
-    </h1>
+    <a href="/2021/08/02/hash%E7%AE%80%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hash简介</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Hash简介"><a href="#Hash简介" class="headerlink" title="Hash简介"></a>Hash简介</h2><ul>
-<li><strong>背景问题</strong>： 顺序存储的结构类型需要一个一个地按顺序访问元素。要查找某个对象时，只能以某种顺序（如顺序查找和二分查找）与各个元素进行比较。当元素数量很多时，查找的效率会明显降低。</li>
-<li><strong>哈希算法</strong>：<ul>
-<li>主要思想：根据结点的关键字的值确定其存储地址（key-index）</li>
-<li>存储：以关键字K为自变量，通过一定的函数关系h(K)，计算出函数值并将其作为结点的存储地址，然后将结点存储到此存储单元中。</li>
-<li>检索：以同样的方法计算地址，然后到该地址中取出结点。</li>
-</ul>
-</li>
-<li><strong>哈希表（hash table）</strong>：<ul>
-<li>定义：按哈希方法构造的存储结构称为哈希表（通过给定的关键字的值直接访问到具体对应的值的一个数据结构）也就是说，把关键字映射到一个表中的位置来直接访问记录，以加快访问速度。</li>
-<li>通常我们把这个关键字称为 Key，把对应的记录称为 Value，所以也可以说是通过 Key 访问一个映射表来得到 Value 的地址。而这个映射表，也叫作散列函数或者哈希函数，存放记录的数组叫作散列表。</li>
-</ul>
-</li>
-<li><strong>哈希函数（hash function）</strong>：数据元素的存放位置和数据元素的关键字之间建立起某种对应关系，建立这种对应关系的函数称为哈希函数。<ul>
-<li>哈希函数的实现方法：<ul>
-<li>考虑因素：关键字的长度，哈希表的大小，关键字的分布情况，记录的查找频率</li>
-<li>几种实现方法：<ul>
-<li><strong>直接寻址法</strong>：取关键字或者关键字的线性函数的值作为地址</li>
-<li><strong>数字分析法</strong>：通过对数据的分析，发现数据中冲突较少的部分，并构造散列地址。例如同学们的学号，通常同一届学生的学号，其中前面的部分差别不太大，所以用后面的部分来构造散列地址。</li>
-<li><strong>平方取中法</strong>：当无法确定关键字哪几位较为均匀时，可以先求出关键字的平方值，然后按照需要取平方值的中间几位作为地址。因为平方值的中间几位与关键字的每一位都相关，所以产生不同的地址值的概率较高</li>
-<li><strong>取随机数法</strong>：使用一个随机函数，取关键字的随机值作为散列地址，通常用于关键字长度不同的场合</li>
-<li><strong>除留取余法</strong>：设散列表长为n，取关键字被某个数m（m不大于n）除后得到的余数p为散列地址。该函数对 m 的选择很重要，一般取素数或者直接用 n。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>解决哈希冲突的方法</strong><ul>
-<li>哈希冲突：不同的关键字经过哈希函数之后有可能得到相同的地址</li>
-<li>几种处理方法： <ul>
-<li><strong>开放寻址法</strong>：对计算出的地址进行一个探测再哈希，比如往后移动一个地址，如果没被占用，就用这个地址。如果超过最大长度，可以对总长度进行取余。</li>
-<li><strong>再哈希法</strong>：使用关键字的其他部分继续计算地址，如还是有冲突，则继续使用其他部分哈希，缺点为增加了时间。</li>
-<li><strong>链地址法</strong>：哈希之后落在了同一个地址上，在这个地址上做一个链表。</li>
-<li><strong>建立公共溢出区</strong>：建立一个公共溢出区，当地址存在冲突时，把新的地址放在公共溢出区上。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>================</p>
-<p> 参考文献：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_59966683/article/details/118905196">https://blog.csdn.net/weixin_59966683/article/details/118905196</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f9239c9377c5">https://www.jianshu.com/p/f9239c9377c5</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63142005">https://zhuanlan.zhihu.com/p/63142005</a></p>
-<p><a target="_blank" rel="noopener" href="http://data.biancheng.net/view/107.html">http://data.biancheng.net/view/107.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/hash%E7%AE%80%E4%BB%8B/" data-id="ckruijsg70000ii8naaldh6oa" data-title="hash简介" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-自动化测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/31/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="article-date">
-  <time class="dt-published" datetime="2021-07-31T10:16:54.000Z" itemprop="datePublished">2021-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/31/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">自动化测试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="自动化测试的总结"><a href="#自动化测试的总结" class="headerlink" title="自动化测试的总结"></a>自动化测试的总结</h2><ol>
-<li><p>定义：</p>
-<ul>
-<li>自动测试就是用程序代替人的手工操作，完成一系列测试的过程。</li>
-<li>自动打开程序，执行测试用例，查找控件，产生数据，输入数据，操作控件，收集结果，比较结果和期望。</li>
-</ul>
-</li>
-<li><p>为什么？</p>
-<ul>
-<li>软件测试的工作量巨大且包含大量重复操作</li>
-<li>很多情况下手工测试难以贴近真实环境且无法提供准确结果</li>
-</ul>
-</li>
-<li><p>优点：</p>
-<ul>
-<li>可重复执行，且执行更多，更频繁的测试</li>
-<li>可执行一些手动测试比较困难或不可能进行的测试</li>
-<li>能更好的利用资源</li>
-<li>具有一致性的特点</li>
-</ul>
-</li>
-<li><p>缺点：</p>
-<ul>
-<li>不能完全代替人工测试，不是所有的测试用例都可以自动化，工具本身不具备思维能力。</li>
-<li>不能保证100%的测试覆盖率</li>
-<li>需要更长的时间去分析和隔离所发现的缺陷</li>
-</ul>
-</li>
-</ol>
-<p>=========</p>
-<p>参考文献</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37908248/article/details/113337238">https://blog.csdn.net/qq_37908248/article/details/113337238</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/31/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" data-id="ckrrmnlnl0000xyjc7t1aak2j" data-title="自动化测试" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-防火墙" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/31/%E9%98%B2%E7%81%AB%E5%A2%99/" class="article-date">
-  <time class="dt-published" datetime="2021-07-31T08:02:59.000Z" itemprop="datePublished">2021-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/31/%E9%98%B2%E7%81%AB%E5%A2%99/">防火墙</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><ol>
-<li><strong>基本定义</strong><ul>
-<li>一种将<strong>内部网和公共访问网（如internet）隔离开的方法</strong>。主要是借助硬件和软件的作用于内部和外部网络的环境间产生一种保护的屏障，从而实现对计算机不安全网络因素的阻断。 </li>
-<li>防火墙技术的功能主要在于及时发现并处理计算机网络运行时可能存在的<strong>安全风险、数据传输</strong>等问题，其中处理措施包括<strong>隔离与保护</strong>，同时可对计算机网络安全当中的<strong>各项操作实施记录与检测</strong>，<strong>以确保计算机网络运行的安全性，保障用户资料与信息的完整性</strong>，为用户提供更好、更安全的计算机网络使用体验。</li>
-</ul>
-</li>
-<li>功能 ：<ul>
-<li>防火墙对网络通讯进行扫描，过滤掉一定的攻击，以免在目标计算机上执行。</li>
-<li>防火墙还可以关闭不使用的端口，禁止特定的端口流出通信。</li>
-<li>可以禁止来自特殊站点的访问，从而防止不明入侵者的通信。</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/31/%E9%98%B2%E7%81%AB%E5%A2%99/" data-id="ckrrklosw0000idjc9fqgf2ps" data-title="防火墙" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-C-S-and-B-S" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/31/C-S-and-B-S/" class="article-date">
-  <time class="dt-published" datetime="2021-07-30T17:42:45.000Z" itemprop="datePublished">2021-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/31/C-S-and-B-S/">C/S and B/S</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="B-S-Browser-Server-vs-C-S-Client-Server-总结"><a href="#B-S-Browser-Server-vs-C-S-Client-Server-总结" class="headerlink" title="B/S (Browser/Server) vs C/S (Client/Server) 总结"></a>B/S (Browser/Server) vs C/S (Client/Server) 总结</h2><ol>
-<li>B/S 即浏览器和服务器间结构</li>
-</ol>
-<ul>
-<li>只安装维护一个服务器，而客户端采用浏览器运行软件。例如网页游戏。</li>
-<li>优点：<ul>
-<li>分布性强，可以随时进行查询，浏览等业务。</li>
-<li>拓展性强，通过增加网页即可增加服务器功能</li>
-<li>维护简单方便，需要改变网页，即可实现所有用户的同步更新。</li>
-<li>开发简单，共享性强</li>
-</ul>
-</li>
-<li>缺点： <ul>
-<li>个性化特点降低，无法满足个性化的功能需求</li>
-<li>功能弱化，难以实现传统模式下的特殊功能</li>
-<li>响应速度降低，无法实现分页显示</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li>C/S 即客户端与服务器结构</li>
-</ol>
-<ul>
-<li>服务器通常采用高性能的PC、工作站或小型机，并采用大型数据库系统，如Oracle、Sybase、Informix或 SQL Server。客户端需要安装专用的客户端软件。例如需要下载客户端的游戏。</li>
-<li>优点： <ul>
-<li>可以借助客户端pc的处理能力，经客户端处理后再提交给服务器，响应速度快。</li>
-<li>操作界面漂亮，形式多样，可充分满足客户个性需求</li>
-<li>具有较强的业务处理能力，能处理复杂的业务</li>
-<li>安全性很容易得到保证，提供了更安全的存取模式</li>
-</ul>
-</li>
-<li>缺点：<ul>
-<li>分布性弱，需要安装专门的客户端程序</li>
-<li>兼容性差，对不同的开发工具，具有较大的局限性</li>
-<li>开发维护成本高，发生一次升级，则所有客户端的程序都需要改变</li>
-<li>用户群体固定，不适合面向一些未知用户，所以通用性较弱，通常用于局域网中。</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>总结： </li>
-</ol>
-<ul>
-<li>C/S 响应快，安全性强，一般只用于局域网中，但是维护开发成本高。</li>
-<li>B/S 可以实现跨平台，客户端零维护，但是个性化能力差，响应速度慢。</li>
-<li>所以一般日常办公应用使用B/S，实际生产中使用C/S。</li>
-</ul>
-<p>参考文献</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zyx110/p/11232105.html">https://www.cnblogs.com/zyx110/p/11232105.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/322195626.html">https://zhidao.baidu.com/question/322195626.html</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/31/C-S-and-B-S/" data-id="ckrqmyf7y0000szjcgzs43za0" data-title="C/S and B/S" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/31/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-07-30T17:30:50.403Z" itemprop="datePublished">2021-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/31/hello-world/" data-id="ckrqmyf870001szjca3jd7cw6" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
